@@ -18,6 +18,7 @@
           <p *ngIf='countval' class="invalid">Minimum <b>8 characters</b></p>
           <p *ngIf='!countval' class="valid">Minimum <b>8 characters</b></p>
         </div>
+        
         <div><input type="text" [(ngModel)]="firstname" placeholder="First Name"></div>
         <div><input type="text" [(ngModel)]="lastname" placeholder="Last Name"></div>
         <div id="register-submit"><button (click)="registerSubmit()">Make Account</button></div>

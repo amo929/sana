@@ -50,5 +50,6 @@ export class RegisterComponent implements OnInit {
     if(this.password.length >= 8) this.countval = false;
     else this.countval = true;
 
+    
   }
 }

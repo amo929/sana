@@ -53,6 +53,7 @@ export class SummaryComponent implements OnInit {
 	}
 
 	printThis() {
+		
 		var win = window.open();
 		self.focus();
 		win.document.open();
