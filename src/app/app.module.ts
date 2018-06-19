@@ -36,7 +36,7 @@ import { RouteModule } from './routing/route.module';
     RouteModule, 
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB06sgqGsI3Wn5_qUKgLCPI-Stpo2w9YJ8' 
+      apiKey: 'PUT KEY HERE' 
     })
   ],
   providers: [],
