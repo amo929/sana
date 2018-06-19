@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div id="logout-button-block" class="col-12">
+            <button class="btn btn-secondary btn-lg" routerLink="/landing">Log Out</button>
+        </div>
+    </div>
+</div>
+
+<app-zipcodes [hidden]="this.us.current !== 1"></app-zipcodes>
+<app-familydemographic [hidden]="this.us.current !== 2"></app-familydemographic>
+<app-healthdemographic [hidden]="this.us.current !== 3"></app-healthdemographic>
+<app-planoptions [hidden]="this.us.current !== 4"></app-planoptions>
+<app-summary *ngIf="this.us.current ===5"></app-summary>

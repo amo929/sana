@@ -1,0 +1,85 @@
+/**************************************/
+/****** PLAN OPTIONS STYLING **********/
+.container {
+    color: white;
+    background: rgba(0, 0, 0, 0.35);
+    padding-bottom: 70px;
+}
+
+#planoption-block select {
+	border-radius: 7px;
+}
+
+#planoption-block span {
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+#planoption-block > div {
+	margin-top: 35px;
+}
+
+.row > div {
+	text-align: center;
+}
+
+.gold-plan, .plat-plan, .medi-plan {
+	margin-bottom: 15px;
+}
+
+/************************************************
+******** BUTTONS STYLING************************/
+.gold-plan button, .plat-plan button, .medi-plan button {
+	box-sizing: border-box;
+	box-shadow: 3px 5px #222222;
+
+	margin-bottom: 0px;
+	min-width: 90%;
+	height: 100px;
+}
+
+.gold-plan button:active, .plat-plan button:active, .medi-plan button:active {
+	transform: translateY(4px);
+	transition: all 0.3s ease 0s;
+}
+
+.gold-plan button:hover {
+	background-color: orange;
+}
+
+.plat-plan button:hover {
+	background-color: pink;
+}
+
+.medi-plan button:hover {
+	background-color: dodgerblue;
+}
+
+.gold-plan button {
+	background-color: gold;
+}
+
+.plat-plan button {
+	background-color: silver;
+}
+
+.medi-plan button {
+	background-color: skyblue;
+}
+/******** END OF BUTTONS STYLING *****************
+*************************************************/
+
+/************************************************
+*** PLANOPTION-DESCRIPTION AND BACK/NEXT BUTTON*/
+
+#planoption-desc {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.buttonwrapper button {
+	margin: 0 3px;
+}
+
+/*** END OF PLAN OPTIONS STYLING ********/
+/****************************************/

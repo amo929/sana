@@ -1,0 +1,25 @@
+/**************************************/
+/****** ZIPCODE STYLING ***************/
+.container {
+    color: white;
+	background: rgba(0, 0, 0, 0.35);
+}
+
+#zipcode-block > div {
+	margin: 20px auto;
+}
+
+#zipcode-block {
+	text-align: center;
+}
+
+#zipcode-block select {
+	font-size: 30px;
+	border-radius: 7px;
+	padding: 5px 50px;
+}
+
+.buttonwrapper {
+	text-align: center;
+	padding: 35px 0px 40px;
+}
