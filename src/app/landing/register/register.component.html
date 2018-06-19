@@ -1,0 +1,14 @@
+<div class="container">
+    <div id="register-block" class="row">
+      <div class="col-md-4 offset-md-4 col-xs-12" >
+        <div id="register-goback"><button (click)="changeView()">&laquo; Go Back</button></div>
+        <div><h1>Register</h1></div>
+        <div><hr></div>
+        <div><input type="text" [(ngModel)]="email" placeholder="Email"></div>
+        <div><input type="password" [(ngModel)]="password" placeholder="Password"></div>
+        <div><input type="text" [(ngModel)]="firstname" placeholder="First Name"></div>
+        <div><input type="text" [(ngModel)]="lastname" placeholder="Last Name"></div>
+        <div id="register-submit"><button (click)="registerSubmit()">Make Account</button></div>
+      </div>
+    </div>
+  </div>

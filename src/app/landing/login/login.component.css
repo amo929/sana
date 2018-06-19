@@ -1,0 +1,73 @@
+#login-block {
+    text-align: center;
+}
+
+#login-block > div {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#login-block h1 {
+    margin: 25px auto 0 auto;
+}
+
+#login-block input {
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 7px;
+}
+
+#login-block input {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 85%;
+}
+
+#login-submit {
+    margin: 25px auto 15px auto;
+}
+
+#login-register {
+    margin-bottom: 35px;
+}
+
+hr {
+    color: darkslategrey !important;
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    width: 88%;
+    margin-bottom: 45px;
+}
+
+/**********************************************
+****** BUTTONS STYLING ***********************/
+#login-submit button {
+    font-size: 20px;
+	color: steelblue;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    background: none;
+    margin: 25px auto 15px auto;
+    padding: 5px 10px;
+}
+
+#login-submit button:hover {
+    color: navy;
+    border-color: navy;
+    transition: all 0.3s ease 0s;
+}
+
+#login-register button {
+    font-size: 14px;
+	color: grey;
+	border: none;
+    background: none;
+    border-radius: 15px;
+}
+
+#login-register button:hover {
+    color: orange;
+    border: 0.5px solid orange;
+	transition: all 0.3s ease 0s;
+}

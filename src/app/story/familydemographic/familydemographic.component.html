@@ -1,0 +1,34 @@
+<div class="container">
+	<div id="familydemo-container" class="row">
+		<div class="col-12">
+			<h2>Guest and Associates</h2>
+		</div>
+
+		<div class="col-md-2 offset-md-3 dropdown">
+			<label for="sel1">Primary Guest: </label>
+			<select class="form-control" id="sel1">
+				<option>1</option>
+			</select>
+		</div>
+
+		<div class="col-md-2 dropdown">
+			<label for="sel2">Spouse: {{selectedSpouse['id']}} </label>
+			<select class="form-control" id="sel2" [(ngModel)]="selectedSpouse">
+				<option *ngFor="let numSpouse of spouseOptions" [ngValue]="numSpouse">{{numSpouse.text}}</option>
+			</select>
+		</div>
+
+		<div class="col-md-2 dropdown">
+			<label for="sel3">Children: {{selectedChild['id']}}</label>
+			<select class="form-control" id="sel3" [(ngModel)]="selectedChild">
+				<option *ngFor="let numChild of childrenOptions" [ngValue]="numChild">{{numChild.text}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+        <div class="col-12 buttonwrapper">
+            <button class="btn btn-primary btn-lg" (click)="goBack()">Back</button>
+            <button class="btn btn-primary btn-lg" (click)="goNext()">Next</button>
+        </div>
+    </div>
+</div>
