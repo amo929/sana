@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AppComponent } from './app.component';
 import { ZipcodesComponent } from './story/zipcodes/zipcodes.component';
 import { PlanoptionsComponent } from './story/planoptions/planoptions.component';
@@ -32,7 +34,10 @@ import { RouteModule } from './routing/route.module';
     BrowserModule,
     FormsModule,
     RouteModule, 
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB06sgqGsI3Wn5_qUKgLCPI-Stpo2w9YJ8' 
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

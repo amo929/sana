@@ -5,9 +5,17 @@
 		</div>
 
 		<div class="col-12">
-			<select [(ngModel)]="currentzip">
+			<select [(ngModel)]="currentzip" (change)="changeZip(currentzip)">
 				<option *ngFor="let zip of zipcodes" [value]="zip">{{zip}}</option>
 			</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<agm-map [zoom]=defaultzoom [latitude]="lat" [longitude]="lng">
+				<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+			</agm-map>
 		</div>
 	</div>
 
@@ -16,5 +24,5 @@
 			<button class="btn btn-primary btn-lg" (click)="goNext()">Next</button>
 		</div>
 	</div>
-	
+
 </div>

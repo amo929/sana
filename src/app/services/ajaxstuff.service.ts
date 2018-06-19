@@ -24,10 +24,10 @@ export class AjaxstuffService {
 			email: input_email,
 			password: input_password
 		}
-		this.http.post(this.url + "/users/login", obj).toPromise().then(data => {
+		this.http.post(this.url + "/request/user/login", obj).toPromise().then(data => {
 			console.log(data);
 			// DO SOMETHING REGARDING UserService
-			// LIKE this.us.sanauser = data;
+			this.us.sanauser = data;
 		}).catch(p => console.log(p));
 	}
 
@@ -40,7 +40,7 @@ export class AjaxstuffService {
 			firstname: input_firstname,
 			lastname: input_lastname
 		}
-		this.http.post(this.url +"/users/register", obj).toPromise().then(data => {
+		this.http.post(this.url +"/request/user/register", obj).toPromise().then(data => {
 			// check if data is null for bad inputs
 			console.log(data);
 		}).catch(p => console.log(p));
@@ -48,7 +48,7 @@ export class AjaxstuffService {
 
 	// UPDATE THE ENTIRE USER
 	updateUser(user: User) {
-		this.http.post(this.url+"/users/update", user).toPromise().then(data => {
+		this.http.post(this.url+"/request/user/update", user).toPromise().then(data => {
 			console.log(data);
 		}).catch(p => console.log(p));
 	}
