@@ -9,13 +9,10 @@ import { UserService } from '../../services/user.service';
 })
 export class HealthdemographicComponent implements OnInit {
 
-<<<<<<< HEAD
 	// for checking inputs
 	error: boolean = false;
 
 	// info about the user
-=======
->>>>>>> origin/Miguel
 	age: string;
 	gender: string;
 	smoker: number;
@@ -68,18 +65,13 @@ export class HealthdemographicComponent implements OnInit {
 		this.us.setSurgery(this.surgery);
 		this.us.setAllergy(this.allergy);
 
-<<<<<<< HEAD
 		if(!this.optionCheck()) {
 			this.us.current += 1;
 		}
-=======
-		this.us.current += 1;
->>>>>>> origin/Miguel
 	}
 	goBack(): void {
 		this.us.current -= 1;
 	}
-<<<<<<< HEAD
 
 	// RETURN TRUE IF SOMETHING ISN'T FILLED OUT
 	// RETURN FALSE IF EVERYTHING IS FILLED OUT
@@ -99,6 +91,4 @@ export class HealthdemographicComponent implements OnInit {
 			return false;
 		}
 	}
-=======
->>>>>>> origin/Miguel
 }

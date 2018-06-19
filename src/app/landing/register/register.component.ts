@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
 import { LandingService } from '../../services/landing.service';
-<<<<<<< HEAD
 import { AjaxstuffService } from '../../services/ajaxstuff.service';
-=======
->>>>>>> origin/Miguel
 
 @Component({
   selector: 'app-register',
@@ -14,15 +11,12 @@ import { AjaxstuffService } from '../../services/ajaxstuff.service';
 })
 export class RegisterComponent implements OnInit {
 
-<<<<<<< HEAD
-=======
   val = false;
   lowerval = true;
   upperval = true;
   numberval = true;
   countval = true;
 
->>>>>>> origin/Miguel
   email: string;
   password: string;
   firstname: string;
@@ -30,29 +24,19 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public us: UserService,
-<<<<<<< HEAD
     public ls: LandingService,
     private as: AjaxstuffService) { }
-=======
-    public ls: LandingService) { }
->>>>>>> origin/Miguel
 
   ngOnInit() {
   }
 
   registerSubmit(): void {
-<<<<<<< HEAD
     this.as.makeAccount(this.email, this.password, this.firstname, this.lastname);
-=======
-    // make http post method
->>>>>>> origin/Miguel
   }
 
   changeView(): void {
     this.ls.changeView();
   }
-<<<<<<< HEAD
-=======
 
   toggleReqs(){
     this.val = !this.val;
@@ -70,5 +54,4 @@ export class RegisterComponent implements OnInit {
 
     
   }
->>>>>>> origin/Miguel
 }

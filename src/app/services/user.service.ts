@@ -7,11 +7,7 @@ import { User } from '../user';
 })
 export class UserService {
 
-<<<<<<< HEAD
   sanauser: any;
-=======
-  sanauser: User;
->>>>>>> origin/Miguel
   current: number = 1;
 
   constructor() { }

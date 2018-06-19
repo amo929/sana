@@ -69,9 +69,6 @@ hr {
 #register-goback button:hover {
     color: orange;
 	transition: all 0.3s ease 0s;
-<<<<<<< HEAD
-}
-=======
 }
 
 /**********************************************
@@ -106,4 +103,3 @@ hr {
     left: -35px;
     content: "✖";
 }
->>>>>>> origin/Miguel

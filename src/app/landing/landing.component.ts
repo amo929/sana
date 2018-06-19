@@ -15,12 +15,8 @@ export class LandingComponent implements OnInit {
   constructor(
     public us: UserService,
     public ls: LandingService) { }
-
-<<<<<<< HEAD
     
-=======
->>>>>>> origin/Miguel
-  ngOnInit() {
+    ngOnInit() {
   }
 
 }
