@@ -1,0 +1,72 @@
+#register-block {
+    text-align: center;
+}
+
+#register-block > div {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#register-block h1 {
+    margin: 0 auto;
+}
+
+#register-block input {
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 7px;
+}
+
+#register-block input {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 85%;
+}
+
+#register-submit {
+    margin: 15px auto 25px auto;
+}
+
+#register-goback {
+    text-align: left;
+}
+
+hr {
+    color: darkslategrey !important;
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    width: 88%;
+    margin-bottom: 45px;
+}
+
+/**********************************************
+****** BUTTONS STYLING ***********************/
+#register-submit button {
+    font-size: 20px;
+	color: steelblue;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    background: none;
+    margin: 25px auto 15px auto;
+    padding: 5px 10px;
+}
+
+#register-submit button:hover {
+    color: navy;
+    border-color: navy;
+    transition: all 0.3s ease 0s;
+}
+
+#register-goback button {
+    font-size: 14px;
+	color: grey;
+	border: none;
+    background: none;
+    border-radius: 15px;
+}
+
+#register-goback button:hover {
+    color: orange;
+	transition: all 0.3s ease 0s;
+}

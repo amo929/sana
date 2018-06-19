@@ -1,0 +1,82 @@
+<div class="container">
+	<div id="planoption-block" class="row">
+		<div class="col-12">
+			<span>Plan Options</span>
+			<select [(ngModel)]="selectedPlan">
+				<option value="gold">Gold Plan</option>
+				<option value="plat">Platinum Plan</option>
+				<option value="medi">Medicare</option>
+			</select>
+		</div>
+
+		<div class="row col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 col-xs-12">
+			<div *ngIf="selectedPlan==='gold'" class="gold-plan col-lg-5 offset-lg-1 col-md-4 offset-md-2 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(1)">
+						<div>Gold 6 Months</div>
+						<div>### per Month</div>
+					</button >
+				</div>
+			</div>
+
+			<div *ngIf="selectedPlan==='gold'" class="gold-plan col-lg-5 col-md-4 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(2)">
+						<div>Gold 12 Months</div>
+						<div>### per Month</div>
+					</button>
+				</div>
+			</div>
+
+			<div *ngIf="selectedPlan==='plat'" class="plat-plan col-lg-5 offset-lg-1 col-md-4 offset-md-2 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(3)">
+						<div>Platinum 6 Months</div>
+						<div>### per Month</div>
+					</button>
+				</div>
+			</div>
+
+
+			<div *ngIf="selectedPlan==='plat'" class="plat-plan col-lg-5 col-md-4 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(4)">
+						<div>Platinum 12 Months</div>
+						<div>### per Month</div>
+					</button>
+				</div>
+			</div>
+
+			<div *ngIf="selectedPlan==='medi'" class="medi-plan col-lg-5 offset-lg-1 col-md-4 offset-md-2 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(5)">
+						<div>Medicare 6 Months</div>
+						<div>### per Month</div>
+					</button>
+				</div>
+			</div>
+
+			<div *ngIf="selectedPlan==='medi'" class="medi-plan col-lg-5 col-md-4 col-sm-12 col-xs-12">
+				<div>
+					<button class="btn" (click)="planVal(6)">
+						<div>Medicare 12 Months</div>
+						<div>### per Month</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="planoption-desc" class="col-12">
+			{{selectedDescription}}
+		</div>	
+
+	</div>
+
+	<div class="row">
+        <div class="col-12 buttonwrapper">
+            <button class="btn btn-primary btn-lg" (click)="goBack()">Back</button>
+            <button class="btn btn-success btn-lg" (click)="goSummary()">Summary</button>
+        </div>
+	</div>
+
+</div>

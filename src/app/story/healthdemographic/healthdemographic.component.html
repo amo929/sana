@@ -1,0 +1,109 @@
+<div class="container">
+
+	<div class="row">
+
+		<div id="health-header" class="col-12">
+			<h2>Information and History</h2>
+		</div>
+
+		<div class="col-md-3 offset-md-2 col-xs-5 offset-xs-1">
+			<div>Age:</div>
+			<label>
+				<input type="radio" name="age" value="age_0_17" (click)="onAgeChange(ageMinor.value)" #ageMinor>
+				<span>0-17</span>
+			</label>
+			<label>
+				<input type="radio" name="age" value="age_18_20" (click)="onAgeChange(ageYoung.value)" #ageYoung>
+				<span>18-20</span>
+			</label>
+			<label>
+				<input type="radio" name="age" value="age_21_40" (click)="onAgeChange(ageMature.value)" #ageMature>
+				<span>21-40</span>
+			</label>
+			<label>
+				<input type="radio" name="age" value="age_40_plus" (click)="onAgeChange(ageSenior.value)" #ageSenior>
+				<span>40 years or old</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 col-xs-5">
+			<div>Gender:</div>
+			<label>
+				<input type="radio" name="gender" value="male" (click)="onGenderChange(genderMale.value)" #genderMale>
+				<span>Male</span>
+			</label>
+			<label>
+				<input type="radio" name="gender" value="female" (click)="onGenderChange(genderFemale.value)" #genderFemale>
+				<span>Female</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 col-xs-5 offset-xs-1">
+			<div>Smoker:</div>
+			<label>
+				<input type="radio" name="smoker" value="1" (click)="onSmokerChange(smokerYes.value)" #smokerYes>
+				<span>Yes</span>
+			</label>
+			<label>
+				<input type="radio" name="smoker" value="0" (click)="onSmokerChange(smokerNo.value)" #smokerNo>
+				<span>No</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 offset-md-2 col-xs-5">
+			<div>High Blood Pressure:</div>
+			<label>
+				<input type="radio" name="blood" value="1" (click)="onHBPChange(bloodYes.value)" #bloodYes>
+				<span>Yes</span>
+			</label>
+			<label>
+				<input type="radio" name="blood" value="0" (click)="onHBPChange(bloodNo.value)" #bloodNo>
+				<span>No</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 col-xs-5 offset-xs-1">
+			<div>Diabetic:</div>
+			<label>
+				<input type="radio" name="diabetic" value="1" (click)="onDiabeticChange(diabeticYes.value)" #diabeticYes>
+				<span>Yes</span>
+			</label>
+			<label>
+				<input type="radio" name="diabetic" value="0" (click)="onDiabeticChange(diabeticNo.value)" #diabeticNo>
+				<span>No</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 col-xs-5">
+			<div>Previous Surgery</div>
+			<label>
+				<input type="radio" name="surgery" value="1" (click)="onSurgeryChange(surgeryYes.value)" #surgeryYes>
+				<span>Yes</span>
+			</label>
+			<label>
+				<input type="radio" name="surgery" value="0" (click)="onSurgeryChange(surgeryNo.value)" #surgeryNo>
+				<span>No</span>
+			</label>
+		</div>
+
+		<div class="col-md-3 offset-md-2 col-xs-5 offset-xs-1">
+			<div>Allergies</div>
+			<label>
+				<input type="radio" name="allergy" value="1" (click)="onAllergyChange(allergyYes.value)" #allergyYes>
+				<span>Yes</span>
+			</label>
+			<label>
+				<input type="radio" name="allergy" value="0" (click)="onAllergyChange(allergyNo.value)" #allergyNo>
+				<span>No</span>
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12 buttonwrapper">
+			<button class="btn btn-primary btn-lg" (click)="goBack()">Back</button>
+			<button class="btn btn-primary btn-lg" (click)="goNext()">Next</button>
+		</div>
+	</div>
+
+</div>

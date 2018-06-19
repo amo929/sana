@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.dropdown {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.dropdown label {
+    margin: 25px auto 15px;
+    text-align: center;
+}
+
+/* @media screen and (max-width: 768px) {
+    .dropdown {
+        max-width: 60%;
+    }
+} */
+
+
+.buttonwrapper {
+	text-align: center;
+	padding: 35px 0px 40px;
+}
+
+.buttonwrapper button {
+    margin: 0 3px;
+}

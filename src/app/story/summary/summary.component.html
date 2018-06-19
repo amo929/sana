@@ -1,0 +1,26 @@
+<div id="summary-container" class="container mx-auto">
+
+	<div class="row">
+		<div class="col-12">
+			<h2>Quote Plan Summary</h2>
+		</div>
+		<div class="col-md-5 offset-md-1">
+			<p>{{summary}}</p>
+		</div>
+
+		<div class="col-md-5">
+			<div class="col-2 centeredbox">
+				<button type="button" class="btn" value="View Quote in PDF">View Quote in PDF</button>
+			</div>
+			<div class="col-2 centeredbox">
+				<button type="button" class="btn " value="Print Quote">Print Quote</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row buttonwrapper">
+		<div class="col-12">
+			<button class="btn btn-primary btn-lg" (click)="goBack()">Back</button>
+		</div>
+	</div>
+</div>

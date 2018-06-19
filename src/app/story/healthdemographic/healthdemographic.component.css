@@ -1,0 +1,31 @@
+.container {
+    color: white;
+    background: rgba(0, 0, 0, 0.35);
+    padding-bottom: 30px;
+}
+
+#health-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row > div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: -4px;
+}
+
+label span {
+    margin-left: 10px;
+}
+
+.buttonwrapper {
+    text-align: center;
+}
+
+.buttonwrapper button {
+	margin: 0 3px;
+}
