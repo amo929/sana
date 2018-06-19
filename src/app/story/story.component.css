@@ -6,3 +6,11 @@
 #logout-button-block {
     margin-top: 10px;
 }
+
+#userinfo {
+    font-size: 30px;
+    color: white;
+    text-align: right;
+    margin-top: 10px;
+    border-bottom: 1px solid white;
+}

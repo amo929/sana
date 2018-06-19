@@ -34,6 +34,8 @@ export class LandingService implements CanActivate {
 		console.log("email: " + this.email)
 		console.log("password: " + this.password);
 		this.us.sanauser = new User();
+		this.us.setFirstname("Michael");
+		this.us.setLastname("Scott");
 
 		// REPLACE BELOW WITH SETTING UP this.us.sanauser 
 		this.as.getUser(this.email, this.password);
