@@ -4,8 +4,20 @@
         <div id="register-goback"><button (click)="changeView()">&laquo; Go Back</button></div>
         <div><h1>Register</h1></div>
         <div><hr></div>
-        <div><input type="text" [(ngModel)]="email" placeholder="Email"></div>
-        <div><input type="password" [(ngModel)]="password" placeholder="Password"></div>
+        <div><input type="text" [(ngModel)]="email" placeholder="Email" ></div>
+        <div><input type="password" [(ngModel)]="password" (focus)="toggleReqs()" (blur)="toggleReqs()" (keyup)="checkPw()" 
+              placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></div>
+        <div id=pwreqs *ngIf='val'>
+          <h6>Password must contain the following:</h6>
+          <p *ngIf='lowerval' class="invalid">A <b>lowercase</b> letter</p>
+          <p *ngIf='!lowerval' class="valid">A <b>lowercase</b> letter</p>
+          <p *ngIf='upperval' class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p *ngIf='!upperval' class="valid">A <b>capital (uppercase)</b> letter</p>
+          <p *ngIf='numberval' class="invalid">A <b>number</b></p>
+          <p *ngIf='!numberval' class="valid">A <b>number</b></p>
+          <p *ngIf='countval' class="invalid">Minimum <b>8 characters</b></p>
+          <p *ngIf='!countval' class="valid">Minimum <b>8 characters</b></p>
+        </div>
         <div><input type="text" [(ngModel)]="firstname" placeholder="First Name"></div>
         <div><input type="text" [(ngModel)]="lastname" placeholder="Last Name"></div>
         <div id="register-submit"><button (click)="registerSubmit()">Make Account</button></div>
