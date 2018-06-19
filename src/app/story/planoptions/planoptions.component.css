@@ -23,12 +23,18 @@
 	text-align: center;
 }
 
+<<<<<<< HEAD
 .gold-plan, .plat-plan, .medi-plan {
 	margin-bottom: 15px;
 }
 
 /************************************************
 ******** BUTTONS STYLING************************/
+=======
+/************************************************
+******** BUTTONS STYLING************************/
+
+>>>>>>> origin/Miguel
 .gold-plan button, .plat-plan button, .medi-plan button {
 	box-sizing: border-box;
 	box-shadow: 3px 5px #222222;

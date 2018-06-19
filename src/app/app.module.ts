@@ -2,8 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 
 import { AgmCoreModule } from '@agm/core';
+=======
+>>>>>>> origin/Miguel
 
 import { AppComponent } from './app.component';
 import { ZipcodesComponent } from './story/zipcodes/zipcodes.component';
@@ -34,10 +37,14 @@ import { RouteModule } from './routing/route.module';
     BrowserModule,
     FormsModule,
     RouteModule, 
+<<<<<<< HEAD
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'PUT KEY HERE' 
     })
+=======
+    HttpClientModule
+>>>>>>> origin/Miguel
   ],
   providers: [],
   bootstrap: [AppComponent]

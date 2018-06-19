@@ -19,6 +19,7 @@
 	padding: 5px 50px;
 }
 
+<<<<<<< HEAD
 agm-map {
 	display: block;
 	height: 400px;
@@ -26,6 +27,8 @@ agm-map {
 	margin: 0 auto;
 }
 
+=======
+>>>>>>> origin/Miguel
 .buttonwrapper {
 	text-align: center;
 	padding: 35px 0px 40px;

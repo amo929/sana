@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
+=======
+>>>>>>> origin/Miguel
 
 import { UserService } from '../../services/user.service';
 
@@ -15,9 +18,13 @@ export class PlanoptionsComponent implements OnInit {
 	plan_mult: number;
 	plan_bonus: number;
 
+<<<<<<< HEAD
 	constructor(
 		public us: UserService,
 		private http: HttpClient) { }
+=======
+	constructor(public us: UserService) { }
+>>>>>>> origin/Miguel
 
 	ngOnInit() {
 	}
@@ -43,7 +50,11 @@ export class PlanoptionsComponent implements OnInit {
 		}
 
 		// ADD A DESCRIPTION FOR THE PLAN SELECTED, BINDED TO 'selectedDescription'
+<<<<<<< HEAD
 		switch (n) {
+=======
+		switch(n) {
+>>>>>>> origin/Miguel
 			case 1: this.selectedDescription = "You selected The Gold Plan for 6 months"; break;
 			case 2: this.selectedDescription = "You selected The Gold Plan for 12 months"; break;
 			case 3: this.selectedDescription = "You selected The Platinum Plan for 6 months"; break;
@@ -59,18 +70,24 @@ export class PlanoptionsComponent implements OnInit {
 	}
 
 	goSummary(): void {
+<<<<<<< HEAD
 		if(this.plan_mult === undefined) {
 			this.selectedDescription = "Please select a plan";
 			return;
 		}
 
+=======
+>>>>>>> origin/Miguel
 		this.us.setPlanMult(this.plan_mult);
 		this.us.setPlanBonus(this.plan_bonus);
 
 		console.log(this.us.getPlanMult());
 		console.log(this.us.getPlanBonus());
+<<<<<<< HEAD
 		console.log(this.us.sanauser);
 
+=======
+>>>>>>> origin/Miguel
 		this.us.current += 1;
 	}
 	goBack(): void {
