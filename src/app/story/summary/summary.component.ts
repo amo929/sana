@@ -22,10 +22,7 @@ export class SummaryComponent implements OnInit {
 	\nallergy ${(this.us.getAllergy())}
 	\nplan_mult ${(this.us.getPlanMult())}
 	\nplan_bonus ${(this.us.getPlanBonus())}`;
-<<<<<<< HEAD
 	
-=======
->>>>>>> origin/Miguel
 
 	info: any[];
 	quote: number;
@@ -34,9 +31,6 @@ export class SummaryComponent implements OnInit {
 	constructor(public us: UserService) { }
 
 	ngOnInit() {
-<<<<<<< HEAD
-		
-=======
 		// this.info.push(this.us.getZipcode());
 		// this.info.push(this.us.getSpouse());
 		// this.info.push(this.us.getChildren());
@@ -53,14 +47,11 @@ export class SummaryComponent implements OnInit {
 		// this.summary = this.info.join(", ");
 		// console.log(this.summary);
 		// console.log(this.us.sanauser);
->>>>>>> origin/Miguel
 	}
 
 	goBack(): void {
 		this.us.current -= 1;
 	}
-<<<<<<< HEAD
-=======
 
 	printThis() {
 		
@@ -85,5 +76,4 @@ export class SummaryComponent implements OnInit {
 		win.print();
 		win.close();
 	}
->>>>>>> origin/Miguel
 }
