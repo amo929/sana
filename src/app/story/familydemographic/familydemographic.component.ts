@@ -9,17 +9,21 @@ import { UserService } from '../../services/user.service';
 })
 export class FamilydemographicComponent implements OnInit {
 
-	spouseOptions: Array<Object> = [
-		{ id: 0, text: "0" },
-		{ id: 1, text: "1" }
-	];
-	childrenOptions: Array<Object> = [
-		{ id: 0, text: "0" },
-		{ id: 1, text: "1" },
-		{ id: 2, text: "2" },
-		{ id: 3, text: "3" },
-		{ id: 4, text: "4+" }
-	];
+	// spouseOptions: Array<Object> = [
+	// 	{ id: 0, text: "0" },
+	// 	{ id: 1, text: "1" }
+	// ];
+	// childrenOptions: Array<Object> = [
+	// 	{ id: 0, text: "0" },
+	// 	{ id: 1, text: "1" },
+	// 	{ id: 2, text: "2" },
+	// 	{ id: 3, text: "3" },
+	// 	{ id: 4, text: "4+" }
+	// ];
+
+	spouseOptions: string[] = ["1", "2"];
+	childrenOptions: string[] = ["0","1","2","3","4+"]
+
 
 	selectedSpouse: Object = this.spouseOptions[0];
 	selectedChild: Object = this.childrenOptions[0];
@@ -27,26 +31,35 @@ export class FamilydemographicComponent implements OnInit {
 	constructor(public us: UserService) { }
 
 	ngOnInit() {
+		if(this.us.sanauser) {
+
+			if(this.us.getSpouse() !== undefined) {
+				this.spouseOptions.forEach(str => {
+					if(+str === this.us.getSpouse()) {
+						this.selectedSpouse = str;
+					}	
+				});
+			}
+
+			if(this.us.getChildren() !== undefined) {
+				this.childrenOptions.forEach(str => {
+					if(str === "4+") str = "4";
+					if(+str === this.us.getChildren()) {
+						this.selectedChild = str;
+					}
+				});
+			}
+		}
 	}
 
 	goNext(): void {
 		if(!this.selectedSpouse && !this.selectedChild) {
 			return;
 		}
-		this.us.setSpouse(this.selectedSpouse['id']);
-		this.us.setChildren(this.selectedChild['id']);
+		this.us.setSpouse(+this.selectedSpouse);
+		if(this.selectedChild === "4+") this.selectedChild = "4";
+		this.us.setChildren(+this.selectedChild);
 
-		console.log(this.us.getSpouse());
-		console.log(this.us.getChildren());
-
-		// if (this.us.getSpouse() !== this.selectedSpouse['id']) {
-		// 	this.us.setSpouse(this.selectedSpouse['id']);
-		// 	// http update
-		// }
-		// if (this.us.getChildren() !== this.selectedChild['id']) {
-		// 	this.us.setChildren(this.selectedChild['id']);
-		// 	// http update
-		// }
 		this.us.current += 1;
 	}
 	goBack(): void {

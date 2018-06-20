@@ -20,6 +20,26 @@ export class PlanoptionsComponent implements OnInit {
 		private http: HttpClient) { }
 
 	ngOnInit() {
+		if(this.us.sanauser) {
+			if(this.us.getPlanMult() !== undefined && this.us.getPlanBonus() !== undefined) {
+				if(this.us.getPlanBonus() === 0.5) {
+					this.plan_bonus = this.us.getPlanBonus();
+					if(this.us.getPlanMult() === 1.1) this.planVal(1);
+					else if(this.us.getPlanMult() === 1.2) this.planVal(3);
+					else if(this.us.getPlanMult() === 1) this.planVal(5);
+				}
+				else if(this.us.getPlanBonus() === 0) {
+					this.plan_bonus = this.us.getPlanMult();
+					if(this.us.getPlanMult() === 1.1) this.planVal(2);
+					else if(this.us.getPlanMult() === 1.2) this.planVal(4);
+					else if(this.us.getPlanMult() === 1) this.planVal(6);
+				}
+
+				if(this.us.getPlanMult() === 1.1) this.plan_mult = 1.1;
+				else if(this.us.getPlanMult() === 1.2) this.plan_mult = 1.2;
+				else if (this.us.getPlanMult() === 1) this.plan_mult = 1;
+			}
+		}
 	}
 
 	planVal(n: number): void {
@@ -27,7 +47,7 @@ export class PlanoptionsComponent implements OnInit {
 		if (n === 1 || n === 3 || n === 5) {
 			this.plan_bonus = 0.5;
 		}
-		else {
+		else if(n === 2 || n === 4 || n === 6) { 
 			this.plan_bonus = 0;
 		}
 
@@ -38,7 +58,7 @@ export class PlanoptionsComponent implements OnInit {
 		else if (this.selectedPlan === "plat") {
 			this.plan_mult = 1.2;
 		}
-		else {
+		else if (this.selectedDescription === "medi") {
 			this.plan_mult = 1;
 		}
 
@@ -53,9 +73,6 @@ export class PlanoptionsComponent implements OnInit {
 		}
 		this.us.setPlanBonus(this.plan_bonus);
 		this.us.setPlanMult(this.plan_mult);
-
-		console.log(this.us.getPlanBonus());
-		console.log(this.us.getPlanMult());
 	}
 
 	goSummary(): void {
@@ -66,10 +83,6 @@ export class PlanoptionsComponent implements OnInit {
 
 		this.us.setPlanMult(this.plan_mult);
 		this.us.setPlanBonus(this.plan_bonus);
-
-		console.log(this.us.getPlanMult());
-		console.log(this.us.getPlanBonus());
-		console.log(this.us.sanauser);
 
 		this.us.current += 1;
 	}

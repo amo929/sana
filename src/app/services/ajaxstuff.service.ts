@@ -10,7 +10,7 @@ import { User } from '../user';
 export class AjaxstuffService {
 
 	// PLEASE MODIFY THIS URL
-	url: string = "http://localhost:3000";
+	url: string = "http://localhost:8083/sana";
 
 	constructor(private http: HttpClient,
 				private us: UserService) { }
@@ -30,7 +30,7 @@ export class AjaxstuffService {
 			this.us.sanauser = data;
 		}).catch(p => {console.log(p);});
 	}
-
+	
 	// REGISTER AN ACCOUNT
 	// NEED A WAY TO SEE IF THE ACCOUNT WAS MADE
 	makeAccount(input_email: string, input_password: string, input_firstname: string, input_lastname: string) {

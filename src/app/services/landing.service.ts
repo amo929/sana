@@ -36,6 +36,21 @@ export class LandingService implements CanActivate {
 		this.us.sanauser = new User();
 		this.us.setFirstname("Michael");
 		this.us.setLastname("Scott");
+		this.us.setZipcode("14606");
+
+		this.us.setSpouse(0);
+		this.us.setChildren(2);
+
+		this.us.setAge("age_18_20");
+		this.us.setGender("male");
+		this.us.setSmoker(1);
+		this.us.setHBP(1);
+		this.us.setDiabetes(1);
+		this.us.setSurgery(1);
+		this.us.setAllergy(1);
+
+		this.us.setPlanBonus(0);
+		this.us.setPlanMult(1.2);
 
 		// REPLACE BELOW WITH SETTING UP this.us.sanauser 
 		this.us.sanauser = this.as.getUser(this.email, this.password);
