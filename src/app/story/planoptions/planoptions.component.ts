@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { UserService } from '../../services/user.service';
+import { AjaxstuffService } from '../../services/ajaxstuff.service';
 
 @Component({
 	selector: 'app-planoptions',
@@ -17,7 +18,8 @@ export class PlanoptionsComponent implements OnInit {
 
 	constructor(
 		public us: UserService,
-		private http: HttpClient) { }
+		private http: HttpClient,
+		private as: AjaxstuffService) { }
 
 	ngOnInit() {
 		if(this.us.sanauser) {
@@ -83,7 +85,7 @@ export class PlanoptionsComponent implements OnInit {
 
 		this.us.setPlanMult(this.plan_mult);
 		this.us.setPlanBonus(this.plan_bonus);
-
+		this.as.updateUser(this.us.sanauser);
 		this.us.current += 1;
 	}
 	goBack(): void {
