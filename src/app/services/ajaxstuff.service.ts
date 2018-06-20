@@ -28,7 +28,7 @@ export class AjaxstuffService {
 			console.log(data);
 			// DO SOMETHING REGARDING UserService
 			this.us.sanauser = data;
-		}).catch(p => console.log(p));
+		}).catch(p => {console.log(p);});
 	}
 
 	// REGISTER AN ACCOUNT
@@ -43,6 +43,8 @@ export class AjaxstuffService {
 		this.http.post(this.url +"/request/user/register", obj).toPromise().then(data => {
 			// check if data is null for bad inputs
 			console.log(data);
+			if (data == null) return false;
+			else return true;
 		}).catch(p => console.log(p));
 	}
 

@@ -71,3 +71,16 @@ hr {
     border: 0.5px solid orange;
 	transition: all 0.3s ease 0s;
 }
+
+/**********************************************
+****** Error STYLING ***********************/
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}

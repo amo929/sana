@@ -38,7 +38,13 @@ export class LandingService implements CanActivate {
 		this.us.setLastname("Scott");
 
 		// REPLACE BELOW WITH SETTING UP this.us.sanauser 
-		this.as.getUser(this.email, this.password);
-		return true;
+		this.us.sanauser = this.as.getUser(this.email, this.password);
+		if(this.us.sanauser) return true;
+		else {
+			console.log("in else block");
+			this.us.changeDisplayError();
+		}
+		console.log("after else block");
+		return false;
 	}
 }

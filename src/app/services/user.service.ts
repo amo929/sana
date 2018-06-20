@@ -9,9 +9,13 @@ export class UserService {
 
   sanauser: any;
   current: number = 1;
+  displayError: boolean = false;
 
   constructor() { }
 
+  changeDisplayError() {
+    this.displayError = true;
+  }
   // A LOT OF GETTERS AND SETTERS
   // USER INFO
   getId(): number {
