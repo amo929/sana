@@ -33,14 +33,18 @@ export class ZipcodesComponent implements OnInit {
 		private http: HttpClient) { }
 
 	ngOnInit() {
+		if(this.us.sanauser) {
+			if(this.us.getZipcode()) {
+				this.currentzip = this.us.getZipcode();
+				this.changeZip(this.currentzip);
+			}
+		}
 	}
 
 	goNext(): void {
 		if (this.us.getZipcode() !== this.currentzip) {
 			this.us.setZipcode(this.currentzip);
-			// http update
 		}
-		console.log(this.us.getZipcode());
 		this.us.current += 1;
 	}
 	goBack(): void {
@@ -49,11 +53,8 @@ export class ZipcodesComponent implements OnInit {
 	changeZip(zip: string) {
 		this.http.get("http://maps.googleapis.com/maps/api/geocode/json?address=" + zip)
 			.toPromise().then(data => {
-				// console.log(data['results'][0]);
 				let obj = data['results'][0];
 				obj = obj.geometry.location;
-				console.log(obj.lat);
-				console.log(obj.lng);
 				this.lat = obj.lat;
 				this.lng = obj.lng;
 

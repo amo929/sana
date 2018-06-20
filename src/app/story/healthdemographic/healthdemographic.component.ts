@@ -24,6 +24,29 @@ export class HealthdemographicComponent implements OnInit {
 	constructor(public us: UserService) { }
 
 	ngOnInit() {
+		if(this.us.sanauser) {
+			if(this.us.getAge()) {
+				this.age = this.us.getAge();
+			}
+			if(this.us.getGender()) {
+				this.gender = this.us.getGender();
+			}
+			if(this.us.getSmoker() !== undefined) {
+				this.smoker= this.us.getSmoker();
+			}
+			if(this.us.getHBP() !== undefined) {
+				this.hbp = this.us.getHBP();
+			}
+			if(this.us.getDiabetes() !== undefined) {
+				this.diabetic = this.us.getDiabetes();
+			}
+			if(this.us.getSurgery() !== undefined) {
+				this.surgery = this.us.getSurgery();
+			}
+			if(this.us.getAllergy() !== undefined) {
+				this.allergy = this.us.getAllergy();
+			}
+		}
 	}
 
 	onAgeChange(inp: string): void {
@@ -49,14 +72,6 @@ export class HealthdemographicComponent implements OnInit {
 	}
 
 	goNext(): void {
-		console.log(this.age);
-		console.log(this.gender);
-		console.log(this.smoker);
-		console.log(this.hbp);
-		console.log(this.diabetic);
-		console.log(this.surgery);
-		console.log(this.allergy);
-
 		this.us.setAge(this.age);
 		this.us.setGender(this.gender);
 		this.us.setSmoker(this.smoker);

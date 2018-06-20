@@ -10,7 +10,7 @@ import { User } from '../user';
 export class AjaxstuffService {
 
 	// PLEASE MODIFY THIS URL
-	url: string = "http://localhost:3000";
+	url: string = "http://localhost:8083/sana";
 
 	constructor(private http: HttpClient,
 				private us: UserService) { }

@@ -12,16 +12,16 @@
 		</div>
 
 		<div class="col-md-2 dropdown">
-			<label for="sel2">Spouse: {{selectedSpouse['id']}} </label>
+			<label for="sel2">Spouse: {{selectedSpouse}} </label>
 			<select class="form-control" id="sel2" [(ngModel)]="selectedSpouse">
-				<option *ngFor="let numSpouse of spouseOptions" [ngValue]="numSpouse">{{numSpouse.text}}</option>
+				<option *ngFor="let numSpouse of spouseOptions">{{numSpouse}}</option>
 			</select>
 		</div>
 
 		<div class="col-md-2 dropdown">
-			<label for="sel3">Children: {{selectedChild['id']}}</label>
+			<label for="sel3">Children: {{selectedChild}}</label>
 			<select class="form-control" id="sel3" [(ngModel)]="selectedChild">
-				<option *ngFor="let numChild of childrenOptions" [ngValue]="numChild">{{numChild.text}}</option>
+				<option *ngFor="let numChild of childrenOptions">{{numChild}}</option>
 			</select>
 		</div>
 	</div>
