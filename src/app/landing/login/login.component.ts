@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
 	changeView(): void {
 		this.ls.changeView();
+		this.us.displayError = false;
 	}
 
 }

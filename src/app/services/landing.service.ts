@@ -33,28 +33,13 @@ export class LandingService implements CanActivate {
 		//FIGURE OUT SOMETHING TO GET THE USER
 		console.log("email: " + this.email)
 		console.log("password: " + this.password);
-		this.us.sanauser = new User();
-		this.us.setFirstname("Michael");
-		this.us.setLastname("Scott");
-		this.us.setZipcode("14606");
 
-		this.us.setSpouse(0);
-		this.us.setChildren(2);
+		// this.us.sanauser = new User();
+		// return true;
 
-		this.us.setAge("age_18_20");
-		this.us.setGender("male");
-		this.us.setSmoker(1);
-		this.us.setHBP(1);
-		this.us.setDiabetes(1);
-		this.us.setSurgery(1);
-		this.us.setAllergy(1);
-
-		this.us.setPlanBonus(0);
-		this.us.setPlanMult(1.2);
-
-		// REPLACE BELOW WITH SETTING UP this.us.sanauser 
+		// CREATE THE USER
 		this.us.sanauser = this.as.getUser(this.email, this.password);
-		if(this.us.sanauser) return true;
+		if(this.us.sanauser && this.us.getId() !== undefined) return true;
 		else {
 			console.log("in else block");
 			this.us.changeDisplayError();

@@ -25,28 +25,17 @@ export class SummaryComponent implements OnInit {
 	
 
 	info: any[];
-	quote: number;
+	quote: string;
 
 
 	constructor(public us: UserService) { }
 
 	ngOnInit() {
-		// this.info.push(this.us.getZipcode());
-		// this.info.push(this.us.getSpouse());
-		// this.info.push(this.us.getChildren());
-		// this.info.push(this.us.getAge());
-		// this.info.push(this.us.getGender());
-		// this.info.push(this.us.getSmoker());
-		// this.info.push(this.us.getHBP());
-		// this.info.push(this.us.getDiabetes());
-		// this.info.push(this.us.getSurgery());
-		// this.info.push(this.us.getAllergy());
-		// this.info.push(this.us.getPlanMult());
-		// this.info.push(this.us.getPlanBonus());
-	
-		// this.summary = this.info.join(", ");
-		// console.log(this.summary);
-		// console.log(this.us.sanauser);
+		if(this.us.sanauser) {
+			if(this.us.getQuote() !== undefined) {
+				this.quote = "Your Quote: " + this.us.getQuote();
+			}
+		}
 	}
 
 	goBack(): void {
