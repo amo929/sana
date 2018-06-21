@@ -16,8 +16,6 @@ export class RegisterComponent implements OnInit {
   upperval = true;
   numberval = true;
   countval = true;
-  errorval = false;
-  successval = false;
 
   email: string;
   password: string;
@@ -33,10 +31,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerSubmit(): void {
-    if(this.as.makeAccount(this.email, this.password, this.firstname, this.lastname)){
-      this.successval = true;
-    }
-    else this.errorval = true;
+    this.as.makeAccount(this.email, this.password, this.firstname, this.lastname);
   }
 
   changeView(): void {

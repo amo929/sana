@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { UserService } from '../services/user.service';
+// import { LandingService } from '../services/landing.service';
 import { User } from '../user';
 
 @Injectable({
@@ -13,6 +14,7 @@ export class AjaxstuffService {
 	url: string = "/sana/request";
 
 	constructor(private http: HttpClient,
+				// private ls: LandingService,
 				private us: UserService) { }
 
 	// THE FUNCTIONS BELOW ARE FOR THE HTTP AJAX CALLS
@@ -39,7 +41,6 @@ export class AjaxstuffService {
 	}
 	
 	// REGISTER AN ACCOUNT
-	// NEED A WAY TO SEE IF THE ACCOUNT WAS MADE
 	makeAccount(input_email: string, input_password: string, input_firstname: string, input_lastname: string) {
 		let obj = {
 			email: input_email,
@@ -53,17 +54,26 @@ export class AjaxstuffService {
 			if (data == null) return false;
 			else {
 				// ADD A WAY TO GO BACK TO LOGIN AFTER SUCCESSFUL LOGIN
+				// this.ls.errorval = false;
+				// this.ls.successval = true;
+				// this.ls.changeView();
 				return true;
 			}
 		}).catch(p => {
 			console.log("CATCH IN makeAccount()")
 			console.log(p);
+			// this.ls.errorval = true;
+			// this.ls.successval = false;
 			return false;
 		});
 	}
 
 	// UPDATE THE ENTIRE USER
 	updateUser(user: User, purpose: string) {
+		if(!user) {
+			return Promise.resolve(true);
+		}
+
 		return this.http.post(this.url+"/user/update", user).toPromise().then(data => {
 			console.log(data);
 			if(purpose === "summary") {
@@ -75,7 +85,7 @@ export class AjaxstuffService {
 			}
 			return true;
 		}).catch(p => {
-			console.log("THEN IN updateUser()");
+			console.log("CATCH IN updateUser()");
 			console.log(p);
 			return false;
 		});

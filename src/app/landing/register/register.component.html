@@ -23,9 +23,9 @@
         <div><input type="text" [(ngModel)]="lastname" placeholder="Last Name"></div>
         <div id="register-submit"><button (click)="registerSubmit()">Make Account</button></div>
         <div>
-          <p *ngIf='errorval' class="invalid">That email is already in use. Please try again</p>
-          <p *ngIf='successval' class="valid">Succesfully Registered</p>
+          <!-- <p *ngIf='this.ls.errorval' class="invalid">That email is already in use. Please try again</p>
+          <p *ngIf='this.ls.successval' class="valid">Succesfully Registered</p> -->
         </div>
       </div>
     </div>
-  </div>
+</div>

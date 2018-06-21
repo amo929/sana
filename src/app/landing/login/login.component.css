@@ -82,5 +82,4 @@ hr {
 .invalid:before {
     position: relative;
     left: -35px;
-    content: "✖";
 }

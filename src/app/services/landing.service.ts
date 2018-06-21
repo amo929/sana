@@ -16,6 +16,10 @@ export class LandingService implements CanActivate {
 	email: string;
 	password: string;
 
+	// for register
+	// errorval = false;
+	// successval = false;
+
 	constructor(
 		public us: UserService,
 		private as: AjaxstuffService) { }
@@ -30,8 +34,6 @@ export class LandingService implements CanActivate {
 
 	// FOR THE LOG-IN PAGE TO GET TO STORY
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-
-		// CREATES THE USER
 		return this.as.getUser(this.email, this.password);
 	}
 }
