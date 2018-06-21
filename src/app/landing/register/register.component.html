@@ -21,7 +21,9 @@
         
         <div><input type="text" [(ngModel)]="firstname" placeholder="First Name"></div>
         <div><input type="text" [(ngModel)]="lastname" placeholder="Last Name"></div>
-        <div id="register-submit"><button (click)="registerSubmit()">Make Account</button></div>
+        <div id="register-submit"><button 
+          [disabled]="(lowerval || upperval || numberval || countval)"
+          (click)="registerSubmit()">Make Account</button></div>
         <div>
           <p *ngIf='this.us.errorval' class="invalid">Bad Input. Please try again</p>
           <p *ngIf='this.us.successval' class="valid">Succesfully Registered</p>
