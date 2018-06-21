@@ -38,7 +38,7 @@ export class SummaryComponent implements OnInit {
 				console.log("WE GOT A QUOTE")
 				let val = this.us.getQuote();
 				console.log("QUOTE:" + val);
-				this.quote = "Your Quote: " + val.toFixed(2);
+				this.quote = "Your Quote: $" + val.toFixed(2);
 			}
 		}
 	}
