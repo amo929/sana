@@ -69,7 +69,7 @@ export class AjaxstuffService {
 
 	// UPDATE THE ENTIRE USER
 	updateUser(user: User, purpose: string) {
-		if(!user) {
+		if(!user) { // to get into landing from the beginning
 			return Promise.resolve(true);
 		}
 
@@ -78,6 +78,7 @@ export class AjaxstuffService {
 			if(purpose === "summary") {
 				console.log("WE JUST HIT THE SUMMARY BUTTON");
 				console.log("SUMMARY QUOTE: " + this.us.getQuote())
+				this.us.sanauser = this.getUser(this.us.getEmail(), this.us.getPassword());
 				this.us.current += 1;
 				console.log("MEANS WE JUST ADDED 1 TO current");
 			}
@@ -92,4 +93,5 @@ export class AjaxstuffService {
 			return false;
 		});
 	}
+
 }

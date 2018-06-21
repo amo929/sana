@@ -30,14 +30,14 @@ export class Lookup {
         { 4: 200 }
     ]
 
-    age: [
+    age = [
         { "age_0_17": 20 },
         { "age_18_20": 20 },
         { "age_20_40": 10 },
         { "age_40+": 20 }
     ];
 
-    plantype: [
+    plantype = [
         { "gold6": 1.15 },
         { "gold12": 1.10 },
         { "plat6": 1.25 },

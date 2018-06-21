@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
+import { Lookup } from '../../lookup';
 
 @Component({
 	selector: 'app-summary',
@@ -9,22 +10,38 @@ import { UserService } from '../../services/user.service';
 })
 export class SummaryComponent implements OnInit {
 
-	summary: string = `
-	\nzipcode ${(this.us.getZipcode())}
-	\nspouse ${(this.us.getSpouse())}
-	\nchildren ${(this.us.getChildren())}
-	\nage ${(this.us.getAge())}
-	\ngender ${(this.us.getGender())}
-	\nsmoker ${(this.us.getSmoker())}
-	\nhbp ${(this.us.getHBP())}
-	\diabetes ${(this.us.getDiabetes())}
-	\nsurgery ${(this.us.getSurgery())}
-	\nallergy ${(this.us.getAllergy())}
-	\nplan_mult ${(this.us.getPlanMult())}
-	\nplan_bonus ${(this.us.getPlanBonus())}`;
+	// summary: string = `
+	// \nzipcode ${(this.us.getZipcode())}
+	// \nspouse ${(this.us.getSpouse())}
+	// \nchildren ${(this.us.getChildren())}
+	// \nage ${(this.us.getAge())}
+	// \ngender ${(this.us.getGender())}
+	// \nsmoker ${(this.us.getSmoker())}
+	// \nhbp ${(this.us.getHBP())}
+	// \diabetes ${(this.us.getDiabetes())}
+	// \nsurgery ${(this.us.getSurgery())}
+	// \nallergy ${(this.us.getAllergy())}
+	// \nplan_mult ${(this.us.getPlanMult())}
+	// \nplan_bonus ${(this.us.getPlanBonus())}`;
+	summary: any = [
+		this.us.sanauser.zipcode,
+		this.us.sanauser.spouse,
+		this.us.sanauser.children,
+		this.us.sanauser.age,
+		this.us.sanauser.gender,
+		this.us.sanauser.smoker,
+		this.us.sanauser.hbp,
+		this.us.sanauser.diabetes,
+		this.us.sanauser.surgery,
+		this.us.sanauser.allergy,
+		this.us.sanauser.plan_mult,
+		this.us.sanauser.plan_bonus
+	];
 	
 
 	info: any[];
+
+	stuff = new Lookup();
 	quote: string;
 
 
@@ -33,11 +50,17 @@ export class SummaryComponent implements OnInit {
 	ngOnInit() {
 		if(this.us.sanauser) {
 			console.log("START OF SUMMARY INIT")
+			// if(!this.us.getQuote() || this.us.getQuote() === 0) {
+			// 	console.log("RIGHT BEFORE calculate() FOR SUMMARY")
+			// 	let val = this.calculate();
+			// 	console.log(val);
+			// 	this.us.setQuote(val);
+			// }
 			if(this.us.getQuote() !== undefined) {
 				console.log("WE GOT A QUOTE")
 				let val = this.us.getQuote();
 				console.log("QUOTE:" + val);
-				this.quote = "Your Quote: " + val.toFixed(2);
+				this.quote = "Your Quote: $" + val.toFixed(2);
 			}
 		}
 	}
@@ -68,5 +91,33 @@ export class SummaryComponent implements OnInit {
 		win.document.close();
 		win.print();
 		win.close();
+	}
+
+	calculate(): number {
+		console.log("INSIDE calculate()");
+		let total = 0;
+		total += this.find(this.stuff.zipcodes, this.us.getZipcode());
+		total += this.find(this.stuff.gender, this.us.getGender());
+		total += this.us.getSmoker() === 1 ? 250 : 0;
+		total += this.us.getDiabetes() === 1 ? 125 : 0;
+		total += this.us.getHBP() === 1 ? 50 : 0;
+		total += this.us.getSurgery() === 1 ? 150 : 0;
+		total += this.us.getAllergy() === 1 ? 15 : 0;
+		total += this.us.getSpouse() === 1 ? 100 : 0;
+		total += this.find(this.stuff.children, this.us.getChildren());
+		total += this.find(this.stuff.age, this.us.getAge());
+		total *= (1 + this.us.getPlanBonus());
+		total *= this.us.getPlanMult();
+		return total;
+	}
+
+	find(arr: any[], key: any) {
+		for(let i=0; i<arr.length; i++) {
+			console.log(arr[i]);
+			if(arr[key]) {
+				console.log(arr[key]);
+				return arr[i].key;
+			}
+		}
 	}
 }

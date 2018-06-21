@@ -4,13 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
 import { AjaxstuffService } from '../../services/ajaxstuff.service';
 
+import { Lookup } from '../../lookup';
+
 @Component({
 	selector: 'app-planoptions',
 	templateUrl: './planoptions.component.html',
 	styleUrls: ['./planoptions.component.css']
 })
 export class PlanoptionsComponent implements OnInit {
-
+	stuff = new Lookup();
 	selectedPlan: string = "gold";
 	selectedDescription: string;
 	plan_mult: number;
@@ -94,9 +96,41 @@ export class PlanoptionsComponent implements OnInit {
 
 		this.us.setPlanMult(this.plan_mult);
 		this.us.setPlanBonus(this.plan_bonus);
+		// this.calculate();
+		// this.us.current+=1;
 		this.as.updateUser(this.us.sanauser, "summary");
 	}
 	goBack(): void {
 		this.us.current -= 1;
 	}
+
+	// calculate(): number {
+	// 	console.log("INSIDE calculate() IN PLAN OPTIONS");
+	// 	let total = 0;
+	// 	total += this.find(this.stuff.zipcodes, this.us.getZipcode());
+	// 	total += this.find(this.stuff.gender, this.us.getGender());
+	// 	total += this.us.getSmoker() === 1 ? 250 : 0;
+	// 	total += this.us.getDiabetes() === 1 ? 125 : 0;
+	// 	total += this.us.getHBP() === 1 ? 50 : 0;
+	// 	total += this.us.getSurgery() === 1 ? 150 : 0;
+	// 	total += this.us.getAllergy() === 1 ? 15 : 0;
+	// 	total += this.us.getSpouse() === 1 ? 100 : 0;
+	// 	total += this.find(this.stuff.children, this.us.getChildren());
+	// 	total += this.find(this.stuff.age, this.us.getAge());
+	// 	total *= (1 + this.us.getPlanBonus());
+	// 	total *= this.us.getPlanMult();
+	// 	return total;
+	// }
+
+	// find(arr: any[], key: any): any {
+	// 	let retval;
+	// 	arr.forEach(val => {
+	// 		if(val[key] {
+	// 			retval = val[key];
+	// 			return retval;
+	// 		}
+	// 	});
+	// 	return retval;
+	// }
 }
+
