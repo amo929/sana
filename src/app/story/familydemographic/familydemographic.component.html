@@ -22,6 +22,7 @@
 			<label for="sel3">Children: {{selectedChild}}</label>
 			<select class="form-control" id="sel3" [(ngModel)]="selectedChild">
 				<option *ngFor="let numChild of childrenOptions">{{numChild}}</option>
+				<option value="message" disabled>For 4 or more, select '4'</option>
 			</select>
 		</div>
 	</div>

@@ -22,7 +22,7 @@ export class FamilydemographicComponent implements OnInit {
 	// ];
 
 	spouseOptions: string[] = ["0", "1"];
-	childrenOptions: string[] = ["0","1","2","3","4+"]
+	childrenOptions: string[] = ["0","1","2","3","4"]
 
 
 	selectedSpouse: Object = this.spouseOptions[0];
