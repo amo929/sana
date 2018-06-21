@@ -36,6 +36,12 @@ export class RegisterComponent implements OnInit {
 
   changeView(): void {
     this.ls.changeView();
+    this.us.successval = false;
+    this.us.errorval = false;
+    this.email = "";
+    this.password = "";
+    this.firstname = "";
+    this.lastname = "";
   }
 
   toggleReqs(){

@@ -31,6 +31,7 @@ export class AjaxstuffService {
 			console.log(data);
 
 			this.us.sanauser = data;
+			this.us.displayError = false;
 			return true;
 		}).catch(p => {
 			console.log("CATCH IN getUser()")
@@ -78,6 +79,8 @@ export class AjaxstuffService {
 			if(purpose === "summary") {
 				console.log("WE JUST HIT THE SUMMARY BUTTON");
 				this.us.sanauser = data;
+				console.log("DID SANA UPDATE?")
+				console.log(this.us.sanauser);
 				console.log("SUMMARY QUOTE: " + this.us.getQuote())
 				this.us.current += 1;
 				console.log("MEANS WE JUST ADDED 1 TO current");

@@ -34,6 +34,7 @@ export class LandingService implements CanActivate {
 
 	// FOR THE LOG-IN PAGE TO GET TO STORY
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+		this.us.displayError = false;
 		return this.as.getUser(this.email, this.password);
 	}
 	// canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {

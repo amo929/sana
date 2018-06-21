@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
 
 	changeView(): void {
 		this.ls.changeView();
+		this.ls.email = "";
+		this.ls.password = "";
 		this.us.displayError = false;
 	}
 
