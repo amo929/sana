@@ -32,8 +32,11 @@ export class SummaryComponent implements OnInit {
 
 	ngOnInit() {
 		if(this.us.sanauser) {
+			console.log("START OF SUMMARY INIT")
 			if(this.us.getQuote() !== undefined) {
+				console.log("WE GOT A QUOTE")
 				let val = this.us.getQuote();
+				console.log("QUOTE:" + val);
 				this.quote = "Your Quote: " + val.toFixed(2);
 			}
 		}

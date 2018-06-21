@@ -21,7 +21,7 @@ export class FamilydemographicComponent implements OnInit {
 	// 	{ id: 4, text: "4+" }
 	// ];
 
-	spouseOptions: string[] = ["1", "2"];
+	spouseOptions: string[] = ["0", "1"];
 	childrenOptions: string[] = ["0","1","2","3","4+"]
 
 

@@ -9,7 +9,13 @@ export class UserService {
 
   sanauser: any;
   current: number = 1;
+
+  // LOG IN ERROR MESSAGE - WAS A QUICK FIX, NEEDED A COMMON SERVICE
   displayError: boolean = false;
+
+  // REGISTER ERROR MESSAGE - WAS A QUICK FIX, NEEDED A COMMON SERVICE
+  errorval: boolean = false;
+  successval: boolean = false;
 
   constructor() { }
 

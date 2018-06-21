@@ -54,16 +54,15 @@ export class AjaxstuffService {
 			if (data == null) return false;
 			else {
 				// ADD A WAY TO GO BACK TO LOGIN AFTER SUCCESSFUL LOGIN
-				// this.ls.errorval = false;
-				// this.ls.successval = true;
-				// this.ls.changeView();
+				this.us.errorval = false;
+				this.us.successval = true;
 				return true;
 			}
 		}).catch(p => {
 			console.log("CATCH IN makeAccount()")
 			console.log(p);
-			// this.ls.errorval = true;
-			// this.ls.successval = false;
+			this.us.errorval = true;
+			this.us.successval = false;
 			return false;
 		});
 	}
@@ -77,7 +76,10 @@ export class AjaxstuffService {
 		return this.http.post(this.url+"/user/update", user).toPromise().then(data => {
 			console.log(data);
 			if(purpose === "summary") {
+				console.log("WE JUST HIT THE SUMMARY BUTTON");
+				console.log("SUMMARY QUOTE: " + this.us.getQuote())
 				this.us.current += 1;
+				console.log("MEANS WE JUST ADDED 1 TO current");
 			}
 			if(purpose === "logout") {
 				this.us.current = 1;

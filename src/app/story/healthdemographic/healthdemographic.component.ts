@@ -53,7 +53,7 @@ export class HealthdemographicComponent implements OnInit {
 		this.age = inp;
 	}
 	onGenderChange(inp: string): void {
-		this.gender=inp;
+		this.gender = inp;
 	}
 	onSmokerChange(inp: string): void {
 		this.smoker = +inp;
@@ -68,6 +68,7 @@ export class HealthdemographicComponent implements OnInit {
 		this.surgery = +inp;
 	}
 	onAllergyChange(inp: string): void {
+		console.log("Changed allergy to" + +inp);
 		this.allergy = +inp;
 	}
 

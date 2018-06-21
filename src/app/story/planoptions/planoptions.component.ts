@@ -24,6 +24,19 @@ export class PlanoptionsComponent implements OnInit {
 	ngOnInit() {
 		if(this.us.sanauser) {
 			if(this.us.getPlanMult() !== undefined && this.us.getPlanBonus() !== undefined) {
+				if(this.us.getPlanMult() === 1.1) {
+					this.plan_mult = 1.1;
+					this.selectedPlan = "gold";
+				}
+				else if(this.us.getPlanMult() === 1.2) {
+					this.plan_mult = 1.2;
+					this.selectedPlan = "plat";
+				}
+				else if (this.us.getPlanMult() === 1) {
+					this.plan_mult = 1;
+					this.selectedPlan = "medi";
+				}
+
 				if(this.us.getPlanBonus() === 0.5) {
 					this.plan_bonus = this.us.getPlanBonus();
 					if(this.us.getPlanMult() === 1.1) this.planVal(1);
@@ -36,10 +49,6 @@ export class PlanoptionsComponent implements OnInit {
 					else if(this.us.getPlanMult() === 1.2) this.planVal(4);
 					else if(this.us.getPlanMult() === 1) this.planVal(6);
 				}
-
-				if(this.us.getPlanMult() === 1.1) this.plan_mult = 1.1;
-				else if(this.us.getPlanMult() === 1.2) this.plan_mult = 1.2;
-				else if (this.us.getPlanMult() === 1) this.plan_mult = 1;
 			}
 		}
 	}
@@ -60,7 +69,7 @@ export class PlanoptionsComponent implements OnInit {
 		else if (this.selectedPlan === "plat") {
 			this.plan_mult = 1.2;
 		}
-		else if (this.selectedDescription === "medi") {
+		else if (this.selectedPlan === "medi") {
 			this.plan_mult = 1;
 		}
 
