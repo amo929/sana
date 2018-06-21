@@ -52,7 +52,7 @@ export class SummaryComponent implements OnInit {
 		var win = window.open();
 		self.focus();
 		win.document.open();
-		win.document.write('<' + 'html' + '><b>SANA</b> Insurance<' + 'body' + '><div style="width:75%; margin:auto"');
+		win.document.write('<' + 'html' + '><b>SANA</b> Insurance<' + 'body' + '><div style="width:75%; margin:auto">');
 		win.document.write('<h1 style="text-align:center">Quote Summary</h1>');
 		win.document.write('<br> <h4 style="padding-left:2em;">Primary Guest: ' + this.us.getFirstname() + ' ' + this.us.getLastname() + '</h4>');
 		win.document.write(' <h4 style="padding-left:2em;">Associates: ' + (this.us.getChildren()+this.us.getSpouse())+ '</h4>');
