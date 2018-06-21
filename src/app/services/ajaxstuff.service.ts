@@ -78,7 +78,6 @@ export class AjaxstuffService {
 			if(purpose === "summary") {
 				console.log("WE JUST HIT THE SUMMARY BUTTON");
 				console.log("SUMMARY QUOTE: " + this.us.getQuote())
-				this.us.sanauser = this.getUser(this.us.getEmail(), this.us.getPassword());
 				this.us.current += 1;
 				console.log("MEANS WE JUST ADDED 1 TO current");
 			}

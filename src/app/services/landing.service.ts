@@ -33,11 +33,11 @@ export class LandingService implements CanActivate {
 	}
 
 	// FOR THE LOG-IN PAGE TO GET TO STORY
-	// canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-	// 	return this.as.getUser(this.email, this.password);
-	// }
-	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
-		this.us.sanauser = new User();
-		return true;
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+		return this.as.getUser(this.email, this.password);
 	}
+	// canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+	// 	this.us.sanauser = new User();
+	// 	return true;
+	// }
 }
