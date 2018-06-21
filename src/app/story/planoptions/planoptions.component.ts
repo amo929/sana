@@ -85,8 +85,7 @@ export class PlanoptionsComponent implements OnInit {
 
 		this.us.setPlanMult(this.plan_mult);
 		this.us.setPlanBonus(this.plan_bonus);
-		this.as.updateUser(this.us.sanauser);
-		this.us.current += 1;
+		this.as.updateUser(this.us.sanauser, "summary");
 	}
 	goBack(): void {
 		this.us.current -= 1;

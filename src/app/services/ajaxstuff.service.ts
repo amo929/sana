@@ -10,7 +10,7 @@ import { User } from '../user';
 export class AjaxstuffService {
 
 	// PLEASE MODIFY THIS URL
-	url: string = "http://localhost:8083/sana";
+	url: string = "/sana/request";
 
 	constructor(private http: HttpClient,
 				private us: UserService) { }
@@ -24,11 +24,18 @@ export class AjaxstuffService {
 			email: input_email,
 			password: input_password
 		}
-		this.http.post(this.url + "/request/user/login", obj).toPromise().then(data => {
+		return this.http.post(this.url + "/user/login", obj).toPromise().then(data => {
+			console.log("THEN IN getUser()")
 			console.log(data);
-			// DO SOMETHING REGARDING UserService
+
 			this.us.sanauser = data;
-		}).catch(p => {console.log(p);});
+			return true;
+		}).catch(p => {
+			console.log("CATCH IN getUser()")
+			console.log(p);
+			this.us.changeDisplayError();
+			return false;
+		});
 	}
 	
 	// REGISTER AN ACCOUNT
@@ -40,18 +47,37 @@ export class AjaxstuffService {
 			firstname: input_firstname,
 			lastname: input_lastname
 		}
-		this.http.post(this.url +"/request/user/register", obj).toPromise().then(data => {
-			// check if data is null for bad inputs
+		return this.http.post(this.url +"/user/register", obj).toPromise().then(data => {
+			console.log("THEN IN makeAccount()");
 			console.log(data);
 			if (data == null) return false;
-			else return true;
-		}).catch(p => console.log(p));
+			else {
+				// ADD A WAY TO GO BACK TO LOGIN AFTER SUCCESSFUL LOGIN
+				return true;
+			}
+		}).catch(p => {
+			console.log("CATCH IN makeAccount()")
+			console.log(p);
+			return false;
+		});
 	}
 
 	// UPDATE THE ENTIRE USER
-	updateUser(user: User) {
-		this.http.post(this.url+"/request/user/update", user).toPromise().then(data => {
+	updateUser(user: User, purpose: string) {
+		return this.http.post(this.url+"/user/update", user).toPromise().then(data => {
 			console.log(data);
-		}).catch(p => console.log(p));
+			if(purpose === "summary") {
+				this.us.current += 1;
+			}
+			if(purpose === "logout") {
+				this.us.current = 1;
+				this.us.sanauser = null;
+			}
+			return true;
+		}).catch(p => {
+			console.log("THEN IN updateUser()");
+			console.log(p);
+			return false;
+		});
 	}
 }

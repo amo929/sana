@@ -29,22 +29,9 @@ export class LandingService implements CanActivate {
 	}
 
 	// FOR THE LOG-IN PAGE TO GET TO STORY
-	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-		//FIGURE OUT SOMETHING TO GET THE USER
-		console.log("email: " + this.email)
-		console.log("password: " + this.password);
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
 
-		// this.us.sanauser = new User();
-		// return true;
-
-		// CREATE THE USER
-		this.us.sanauser = this.as.getUser(this.email, this.password);
-		if(this.us.sanauser && this.us.getId() !== undefined) return true;
-		else {
-			console.log("in else block");
-			this.us.changeDisplayError();
-		}
-		console.log("after else block");
-		return false;
+		// CREATES THE USER
+		return this.as.getUser(this.email, this.password);
 	}
 }
